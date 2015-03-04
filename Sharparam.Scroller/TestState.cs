@@ -37,13 +37,21 @@
                 _frameCount = 0;
                 _fpsElapsed -= FpsUpdateDelay;
             }
-            _text.DisplayedString = string.Format("Frames: {0}, FPS: {1}", _frameCount, _fps);
+
+            lock (_text)
+            {
+                _text.DisplayedString = string.Format("Frames: {0}, FPS: {1}", _frameCount, _fps);   
+            }
         }
 
         public void Draw(RenderWindow window)
         {
             _frameCount++;
-            window.Draw(_text);
+
+            lock (_text)
+            {
+                window.Draw(_text);   
+            }
         }
 
         public void Disable()
