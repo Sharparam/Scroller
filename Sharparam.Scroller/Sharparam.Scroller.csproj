@@ -66,6 +66,12 @@
     <Compile Include="IState.cs" />
     <Compile Include="IStateManager.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="TestState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\fonts\BebasNeue.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

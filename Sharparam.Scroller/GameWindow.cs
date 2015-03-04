@@ -29,6 +29,8 @@
             {
                 if (StateCount > 0)
                     CurrentState.OnClose();
+                else // Fallback when no states
+                    Close();
             };
 
             Window.KeyPressed += (sender, args) =>
@@ -115,6 +117,12 @@
         }
 
         public RenderWindow Window { get; private set; }
+
+        // Convenience method
+        public void Close()
+        {
+            Window.Close();
+        }
 
         public IState Peek()
         {
