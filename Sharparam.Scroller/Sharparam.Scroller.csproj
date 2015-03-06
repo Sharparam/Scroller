@@ -65,6 +65,8 @@
     <Compile Include="GameWindow.cs" />
     <Compile Include="IState.cs" />
     <Compile Include="IStateManager.cs" />
+    <Compile Include="GameException.cs" />
+    <Compile Include="MapLoadException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="TestState.cs" />
   </ItemGroup>
