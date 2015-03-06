@@ -10,6 +10,8 @@
     using SFML.Graphics;
     using SFML.Window;
 
+    using Sharparam.Scroller.States;
+
     public class GameWindow : IStateManager
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(GameWindow));
@@ -211,11 +213,11 @@
             _renderThread.Join();
         }
 
-        protected virtual void Draw(RenderWindow window)
+        protected virtual void Draw(RenderTarget target)
         {
             Window.Clear(ClearColor);
             if (StateCount > 0)
-                CurrentState.Draw(window);
+                target.Draw(CurrentState);
         }
 
         protected virtual void Update(TimeSpan elapsed)

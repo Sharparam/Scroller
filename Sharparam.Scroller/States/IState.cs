@@ -1,15 +1,13 @@
-﻿namespace Sharparam.Scroller
+﻿namespace Sharparam.Scroller.States
 {
     using System;
 
     using SFML.Graphics;
     using SFML.Window;
 
-    public interface IState
+    public interface IState : Drawable
     {
         void Update(TimeSpan elapsed);
-
-        void Draw(RenderWindow window);
 
         void Disable();
 

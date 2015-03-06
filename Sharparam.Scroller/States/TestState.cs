@@ -1,12 +1,16 @@
-﻿namespace Sharparam.Scroller
+﻿namespace Sharparam.Scroller.States
 {
     using System;
+
+    using log4net;
 
     using SFML.Graphics;
     using SFML.Window;
 
     public class TestState : IState
     {
+        private static readonly ILog Log = LogManager.GetLogger(typeof(TestState));
+
         private readonly GameWindow _window;
 
         private Font _font;
@@ -19,9 +23,15 @@
 
         private int _fps;
 
+        private Map _map;
+
         private static readonly TimeSpan FpsUpdateDelay = TimeSpan.FromSeconds(1);
 
         private TimeSpan _fpsElapsed = TimeSpan.Zero;
+
+        private bool _mouseDown;
+
+        private Vector2f _lastPos;
 
         public TestState(GameWindow window)
         {
@@ -44,13 +54,15 @@
             }
         }
 
-        public void Draw(RenderWindow window)
+        public void Draw(RenderTarget target, RenderStates states)
         {
             _frameCount++;
 
+            target.Draw(_map);
+
             lock (_text)
             {
-                window.Draw(_text);   
+                target.Draw(_text);   
             }
         }
 
@@ -61,69 +73,81 @@
 
         public void Enable()
         {
-            Console.WriteLine("Enabled!");
+            Log.Debug("Enabled!");
             if (_loaded)
                 return;
-            Console.WriteLine("Loading font...");
+            Log.Debug("Loading font...");
             _font = new Font(@"res\fonts\BebasNeue.otf");
             _text = new Text("Hello, World!", _font) { Color = Color.White };
+            Log.Debug("Loading test map...");
+            _map = new Map(@"res\maps\test.tmx");
             _loaded = true;
         }
 
         public void OnClose()
         {
-            Console.WriteLine("OnClose!");
+            Log.Debug("OnClose!");
             _window.Close();
         }
 
         public void OnKeyPressed(KeyEventArgs args)
         {
-            Console.WriteLine("OnKeyPressed: {0}", args.Code);
+            //Log.DebugFormat("OnKeyPressed: {0}", args.Code);
         }
 
         public void OnKeyReleased(KeyEventArgs args)
         {
-            Console.WriteLine("OnKeyReleased: {0}", args.Code);
+            //Log.DebugFormat("OnKeyReleased: {0}", args.Code);
         }
 
         public void OnMouseButtonPressed(MouseButtonEventArgs args)
         {
-            Console.WriteLine("OnMouseButtonPressed: {0} ({1}, {2})", args.Button, args.X, args.Y);
+            //Log.DebugFormat("OnMouseButtonPressed: {0} ({1}, {2})", args.Button, args.X, args.Y);
+            if (args.Button == Mouse.Button.Left)
+                _mouseDown = true;
         }
 
         public void OnMouseButtonReleased(MouseButtonEventArgs args)
         {
-            Console.WriteLine("OnMouseButtonReleased: {0} ({1}, {2})", args.Button, args.X, args.Y);
+            //Log.DebugFormat("OnMouseButtonReleased: {0} ({1}, {2})", args.Button, args.X, args.Y);
+            if (args.Button == Mouse.Button.Left)
+                _mouseDown = false;
         }
 
         public void OnMouseMoved(MouseMoveEventArgs args)
         {
-            //Console.WriteLine("OnMouseMoved: {0}, {1}", args.X, args.Y);
+            var newPos = new Vector2f(args.X, args.Y);
+            if (_mouseDown)
+            {
+                var moveDelta = _lastPos - newPos;
+                _map.View.Move(moveDelta);
+            }
+            _lastPos = newPos;
         }
 
         public void OnMouseWheelMoved(MouseWheelEventArgs args)
         {
-            Console.WriteLine("OnMouseWheelMoved: {0}", args.Delta);
+            _map.View.Zoom(args.Delta == 1 ? 0.5f : 1.5f);
         }
 
         public void OnMouseLeft()
         {
-            Console.WriteLine("OnMouseLeft!");
+            //Log.Debug("OnMouseLeft!");
         }
 
         public void OnMouseEntered()
         {
-            Console.WriteLine("OnMouseEntered!");
+            //Log.Debug("OnMouseEntered!");
         }
 
         public void OnGainedFocus()
         {
-            Console.WriteLine("OnGainedFocus!");
+            //Log.Debug("OnGainedFocus!");
         }
 
         public void OnLostFocus()
         {
-            Console.WriteLine("OnLostFocus!");
+            //Log.Debug("OnLostFocus!");
         }
     }
 }

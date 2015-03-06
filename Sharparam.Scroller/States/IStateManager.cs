@@ -1,4 +1,4 @@
-﻿namespace Sharparam.Scroller
+﻿namespace Sharparam.Scroller.States
 {
     public interface IStateManager
     {
