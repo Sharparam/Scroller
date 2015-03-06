@@ -32,6 +32,7 @@
             Log.Debug("Initializing SFML render window");
             Window = new RenderWindow(new VideoMode(width, height), title, style);
             Window.SetActive(false);
+            Window.SetFramerateLimit(60);
 
             Log.Debug("Setting up window events.");
 
