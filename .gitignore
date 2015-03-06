@@ -159,6 +159,8 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 
+# Ignore unused asset files
+Sharparam.Scroller/res/images/simples_pimples.*
+
 # Ignore zip archives in res
 **/res/**/*.zip
-
