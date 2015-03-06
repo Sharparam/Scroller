@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameWindow.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="IState.cs" />
     <Compile Include="IStateManager.cs" />
     <Compile Include="GameException.cs" />
@@ -78,6 +79,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="TestState.cs" />
+    <Compile Include="Tileset.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
