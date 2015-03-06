@@ -39,7 +39,8 @@
             Log.Debug("Loading tileset texture from TMX tileset image stream.");
             var image = new Image(_tmxTileset.Image.Source);
             var trans = _tmxTileset.Image.Trans;
-            image.CreateMaskFromColor(new Color((byte)trans.R, (byte)trans.G, (byte)trans.B));
+            if (trans != null)
+                image.CreateMaskFromColor(new Color((byte)trans.R, (byte)trans.G, (byte)trans.B));
             _texture = new Texture(image);
             _firstGid = _tmxTileset.FirstGid;
             _width = _texture.Size.X;
