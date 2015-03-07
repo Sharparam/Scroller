@@ -8,6 +8,8 @@
 
     using SFML.Graphics;
 
+    using Sharparam.Scroller.Mapping;
+
     public static class ResourceManager
     {
         private const string BaseResourcePath = "res";

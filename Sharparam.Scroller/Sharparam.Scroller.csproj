@@ -66,9 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameWindow.cs" />
-    <Compile Include="Map.cs" />
+    <Compile Include="Mapping\Map.cs" />
+    <Compile Include="Mapping\MapLoadException.cs" />
+    <Compile Include="Mapping\TileLayer.cs" />
+    <Compile Include="Mapping\Tileset.cs" />
+    <Compile Include="Mapping\TilesetException.cs" />
     <Compile Include="GameException.cs" />
-    <Compile Include="MapLoadException.cs" />
     <Compile Include="ResourceManager.cs" />
     <Compile Include="States\IState.cs" />
     <Compile Include="States\IStateManager.cs" />
@@ -80,8 +83,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="States\TestState.cs" />
-    <Compile Include="Tileset.cs" />
-    <Compile Include="TilesetException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

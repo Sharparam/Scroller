@@ -1,9 +1,7 @@
-﻿namespace Sharparam.Scroller
+﻿namespace Sharparam.Scroller.Mapping
 {
     using System;
     using System.Runtime.Serialization;
-
-    using log4net;
 
     public class MapLoadException : GameException
     {

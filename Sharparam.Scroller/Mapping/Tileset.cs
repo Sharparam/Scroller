@@ -1,4 +1,4 @@
-﻿namespace Sharparam.Scroller
+﻿namespace Sharparam.Scroller.Mapping
 {
     using System;
     using System.Collections.Generic;
@@ -176,7 +176,7 @@
 
         public Vector2f GetTileCoordinates(int gid)
         {
-            if (gid < _firstGid || gid > _lastGid)
+            if (!HasGid(gid))
                 throw new ArgumentOutOfRangeException("gid", gid, "GID is outside the range of defined tileset GIDs.");
             if (_coordCache.ContainsKey(gid))
                 return _coordCache[gid];
@@ -191,6 +191,17 @@
             var coords = new Vector2f(col * _tmxTileset.TileWidth, row * _tmxTileset.TileHeight);
             _coordCache[gid] = coords;
             return coords;
+        }
+
+        /// <summary>
+        /// Returns a boolean indicating whether or not this tileset has
+        /// the specified GID in its collection of tiles.
+        /// </summary>
+        /// <param name="gid">The GID to search for.</param>
+        /// <returns><c>true</c> if the GID is contained in this tileset, <c>false</c> otherwise.</returns>
+        public bool HasGid(int gid)
+        {
+            return gid >= _firstGid && gid <= _lastGid;
         }
     }
 }

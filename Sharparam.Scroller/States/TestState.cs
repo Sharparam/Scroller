@@ -7,6 +7,8 @@
     using SFML.Graphics;
     using SFML.Window;
 
+    using Sharparam.Scroller.Mapping;
+
     public class TestState : IState
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(TestState));

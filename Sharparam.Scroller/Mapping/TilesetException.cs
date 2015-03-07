@@ -1,4 +1,4 @@
-﻿namespace Sharparam.Scroller
+﻿namespace Sharparam.Scroller.Mapping
 {
     using System;
     using System.Runtime.Serialization;
