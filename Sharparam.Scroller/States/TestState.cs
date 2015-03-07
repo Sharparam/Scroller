@@ -77,10 +77,10 @@
             if (_loaded)
                 return;
             Log.Debug("Loading font...");
-            _font = new Font(@"res\fonts\BebasNeue.otf");
+            _font = ResourceManager.LoadFont("BebasNeue.otf"); ////new Font(@"res\fonts\BebasNeue.otf");
             _text = new Text("Hello, World!", _font) { Color = Color.White };
             Log.Debug("Loading test map...");
-            _map = new Map(@"res\maps\test.tmx");
+            _map = ResourceManager.LoadMap("test"); ////new Map(@"res\maps\test.tmx");
             _loaded = true;
         }
 
