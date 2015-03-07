@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="States\TestState.cs" />
     <Compile Include="Tileset.cs" />
+    <Compile Include="TilesetException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
