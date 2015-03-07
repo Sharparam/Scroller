@@ -30,6 +30,7 @@
         public static Font LoadFont(string file)
         {
             var path = Path.Combine(FontPath, file);
+            Log.InfoFormat("Loading font: {0}", path);
             var font = new Font(path);
             return Add(Path.GetFileNameWithoutExtension(path), font);
         }
@@ -37,6 +38,7 @@
         public static Map LoadMap(string name)
         {
             var path = Path.Combine(MapPath, name);
+            Log.InfoFormat("Loading map  {0}:{1}", name, path);
             path = Path.ChangeExtension(path, MapExtension);
             var map = new Map(path);
             return Add(map.Name, map);
