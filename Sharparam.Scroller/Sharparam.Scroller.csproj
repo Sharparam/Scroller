@@ -69,6 +69,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="GameException.cs" />
     <Compile Include="MapLoadException.cs" />
+    <Compile Include="ResourceManager.cs" />
     <Compile Include="States\IState.cs" />
     <Compile Include="States\IStateManager.cs" />
     <Compile Include="Program.cs" />
