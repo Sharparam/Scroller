@@ -86,8 +86,7 @@
             Log.DebugFormat("Tileset texture loaded, dimensions: {0},{1}", _width, _height);
             _tilesX = _width / _tmxTileset.TileWidth;
             _tilesY = _height / _tmxTileset.TileHeight;
-            _tileCount = _tmxTileset.Tiles.Count;
-            Debug.Assert(_tileCount == _tilesX * _tilesY, "Tile count given by TMX is different from calculated count.");
+            _tileCount = _tilesX * _tilesY;
             Log.DebugFormat("Tileset has {0}x{1} ({2}) tiles.", _tilesX, _tilesY, _tileCount);
             _lastGid = _firstGid + _tileCount - 1;
             Log.Debug("Creating coord cache.");
