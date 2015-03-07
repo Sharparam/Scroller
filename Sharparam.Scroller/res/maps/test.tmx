@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="16" tileheight="16" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="16" tileheight="16" nextobjectid="3">
  <properties>
   <property name="name" value="test"/>
  </properties>
@@ -100,29 +100,32 @@
  </tileset>
  <layer name="background" width="100" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt0bENgDAQBMFvjtqowvXQFg04QpbYYEa69JKdoeT6aezp0aJHix4terTo0aJHix4terTco0fJGj1K9GjRo0WPFj1a1oEPPc5ZB/Z8GHt6tOjR8gJavLz7
+   eJztlFsKgCAQRd1cS2oL1SKy7dSyIkgQGWPMsdG8Awc/Rnzcgw7GmAGAzliCkdsDZdjuvLfEHijnw5HSA/DRA37mSwB86Pp4QvucvQAfdQEf32EEfcwV3Kd1KB9+pfiwFdwnJ4ewpNfkzLeMuX/zQdVKILGPZWZMzc+t2nzEispe2ofLIyVfS3AQtPo+uLmX8EFl+wb4+JeP3JL6l7TOou1j8pDYf39BbK0xk9Z8XA789w0fOj7cewj/W/j41kfMg+MEXde7Hw==
   </data>
  </layer>
  <layer name="platforms" width="100" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt0TEKACAMA8D6QN/ltx1E6C4o2DsINGsaAQAAAAB19baS7925w+bv+QG/GocBoJ4JKU0LLw==
+   eJzt2IEJgCAQQFHdqiWqEdqmWsJdKyQQs9QOy+g/OJSSgjuvKKUAAEBMr20Af0YffMdeK+qFP3uqB6byt0AGEzjWrPug03b8mlbbyDUGQmryImW9O9bOzfU+L517yTPKnMxT1l/VcE6MEu7mfBPKu2TfX71D/HN+Lo069ktu/7xFUgOg5m+PWE+W6Nmzaw3CiKm5DsBT3H8i9ATuWgC3OzYl
   </data>
  </layer>
  <layer name="hazards" width="100" height="20">
   <data encoding="base64" compression="zlib">
-   eJztw7EJAAAIA7D+/40fund0ExJIAgAAAAAAQJtDAH5bFK8I/g==
+   eJzt1DENAEAIwED8uwGFLwAmpk+4S2qhEQAAAADAJTUEQJeLAK7bvPOnhz53VhbX
   </data>
  </layer>
  <layer name="lowdeco" width="100" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt07ENgDAMRUFLsFp2IfsvQElH4zgE5U5Kle5bL4IVXWfuH3jXNVTGtjCH1mrZFx56+B83G8+mkKcjdtKO3AMAvnUDgSUIwQ==
+   eJztlsEKgzAMhsX6IvoS7rRb9aQnX2J7/8t2WoUJtQSJWptG/g9CIkqT5ie2RQEAAPnxqmTX35v/6npjEHvPV6+TIp+mWgH6F6K1H1rq1lKnFFr7s1U39Y67z9T96E3afFr15pL63vcs6Tgmd9GsM2vjfO97DlNJxyF36akUsyaWocvbafBx/vuPAQ3Vy/ls6IOZsZ7lgOY50lw7kMGac3Y0Z3h25jL/ADT4j2bFA3qIU3saQA8Z2mrtF0b3PDj7AeygHDo=
   </data>
  </layer>
  <layer name="highdeco" width="100" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt0TEKgDAMBdBAHe3FlJ5Bpfe/gw6CYjs6iLw3JZ8/JREAAAAAAPzRlCLm1Oalk/GOcbjm5XHn9di3W5bPbvUPAPiMHYoWApw=
+   eJzt1WEKgjAYxvFB+2ZerBC8QVnL4ypeoZSu4YgGYzhoY7IF/983hcnr88wpBAAAAAD4tYfcE8DW08fHoHMYySI5JYV4yPB1s+5i+fbxStzLLfB5dcT8/2LyZGEyrwp+d1XwbLHeVh/PQs6jo5OzKmQu5HXS++C8sRca9sdu7G/x4uR81deddc/8t+6J+3DPAwAA8LsVfMsNfg==
   </data>
  </layer>
+ <objectgroup name="player">
+  <object id="2" name="spawnpoint" type="spawn" x="41.5" y="235"/>
+ </objectgroup>
  <layer name="foreground" width="100" height="20">
   <data encoding="base64" compression="zlib">
    eJztwQEBAAAAgJD+r+4ICgAAAAAAAAAYH0AAAQ==
@@ -130,7 +133,7 @@
  </layer>
  <layer name="collision" width="100" height="20" opacity="0.5">
   <data encoding="base64" compression="zlib">
-   eJzt07EJwDAMAEFv4cGzcEgdt0FPuAPVAj3aa609NLxN3UWPMz1a9GjRo0WPFj1a9Gj54i7X0N4/8B8terTo0aJHix4terTowUOPFj1a9GjR4+wGQhwGaw==
+   eJzt0bEJADAMBDFvkcGzsOv0Ab9BmuDgqgAAAPa60wHwyZkO4OFHFj+y+JHFjyx+AMB+DQVzAR4=
   </data>
  </layer>
 </map>
